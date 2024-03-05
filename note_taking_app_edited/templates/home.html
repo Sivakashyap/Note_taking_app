@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Taking App</title>
+</head>
+<body>
+    <h1>Notes</h1>
+    <form method="post" action="/">
+        <label for="note">Add a Note:</label>
+        <input type="text" id="note" name="note" required>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <ul>
+        {% for note_id, note_content in notes.items() %}
+            <li>{{ note_content }} (ID: {{ note_id }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
